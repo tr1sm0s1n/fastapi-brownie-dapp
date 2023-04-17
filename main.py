@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File, Form, Request, UploadFile
+from fastapi import FastAPI, Form, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from typing import Annotated
@@ -36,7 +36,16 @@ async def get_issue(request: Request):
 
 
 @app.post("/issue")
-async def post_issue(request: Request, id: Annotated[str, Form()], document: Annotated[UploadFile, File()]):
-    print(id)
-    print(document)
+async def post_issue(request: Request, id: Annotated[int, Form()], name: Annotated[str, Form()], course: Annotated[str, Form()], grade: Annotated[str, Form()], date: Annotated[str, Form()]):
+    trx = contract_instance.functions.issue(
+        id, name, course, grade, date).transact({"from": details["deployer"]})
+    trx_hash = trx.hex()
+    trx_receipt = w3.eth.get_transaction_receipt(trx_hash)
+    print(trx_receipt)
     return templates.TemplateResponse("issue.html", {"request": request, "form": "is-hidden", "issued_id": id})
+
+
+@app.post("/certificate")
+async def fetch_certificate(request: Request, id: Annotated[int, Form()]):
+    result = contract_instance.functions.Certificates(id).call()
+    return templates.TemplateResponse("certificate.html", {"request": request, "id": id, "name": result[0], "course": result[1], "grade": result[2], "date": result[3]})
