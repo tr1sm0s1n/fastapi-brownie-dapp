@@ -15,7 +15,8 @@ def main():
         "contract": cert.address,
     }
 
-    print(f"Account: {details['deployer']} deployed contract: {details['contract']}")
+    print(
+        f"Account: {details['deployer']} deployed contract: {details['contract']}")
 
     json_object = json.dumps(details, indent=2)
 
