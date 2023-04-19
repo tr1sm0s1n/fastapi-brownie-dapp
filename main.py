@@ -1,15 +1,15 @@
+import json
+from typing import Annotated
 from fastapi import FastAPI, Form, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from typing import Annotated
 from web3 import Web3
-import json
 
 # loading artifact and details
-with open('build/contracts/Cert.json', 'r') as f:
+with open('build/contracts/Cert.json', 'r', -1, 'utf-8') as f:
     artifact = json.load(f)
 
-with open('details.json', 'r') as f:
+with open('details.json', 'r', -1, 'utf-8') as f:
     details = json.load(f)
 
 # fastapi config
@@ -36,16 +36,16 @@ async def get_issue(request: Request):
 
 
 @app.post("/issue")
-async def post_issue(request: Request, id: Annotated[int, Form()], name: Annotated[str, Form()], course: Annotated[str, Form()], grade: Annotated[str, Form()], date: Annotated[str, Form()]):
+async def post_issue(request: Request, _id: Annotated[int, Form()], name: Annotated[str, Form()], course: Annotated[str, Form()], grade: Annotated[str, Form()], date: Annotated[str, Form()]):
     trx = contract_instance.functions.issue(
-        id, name, course, grade, date).transact({"from": details["deployer"]})
+        _id, name, course, grade, date).transact({"from": details["deployer"]})
     trx_hash = trx.hex()
     trx_receipt = w3.eth.get_transaction_receipt(trx_hash)
     print(trx_receipt)
-    return templates.TemplateResponse("issue.html", {"request": request, "form": "is-hidden", "issued_id": id})
+    return templates.TemplateResponse("issue.html", {"request": request, "form": "is-hidden", "issued_id": _id})
 
 
 @app.post("/certificate")
-async def fetch_certificate(request: Request, id: Annotated[int, Form()]):
-    result = contract_instance.functions.Certificates(id).call()
-    return templates.TemplateResponse("certificate.html", {"request": request, "id": id, "name": result[0], "course": result[1], "grade": result[2], "date": result[3]})
+async def fetch_certificate(request: Request, _id: Annotated[int, Form()]):
+    result = contract_instance.functions.Certificates(_id).call()
+    return templates.TemplateResponse("certificate.html", {"request": request, "_id": _id, "name": result[0], "course": result[1], "grade": result[2], "date": result[3]})
