@@ -24,7 +24,7 @@ cd fastapi-brownie-dapp
 Create a virtual environment
 
 ```bash
-python -m venv venv
+python3 -m venv venv
 ```
 
 Activate the environment
@@ -41,10 +41,17 @@ source /venv/bin/activate
 .\venv\Scripts\Activate.ps1
 ```
 
+Workaround for PyYAML
+
+```bash
+echo 'Cython < 3.0' > /tmp/constraint.txt
+PIP_CONSTRAINT=/tmp/constraint.txt pip wheel PyYAML==5.4.1
+```
+
 Install packages
 
 ```bash
-pip -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Compile the contract
@@ -59,7 +66,7 @@ Test the contract
 brownie test
 ```
 
-Run a blockchain (ganache/geth/foundry) on http://127.0.0.1:8545
+Run a blockchain (ganache/geth/foundry) on port **8545**.
 
 Deploy the contract
 
@@ -75,17 +82,12 @@ uvicorn main:app --reload
 
 ## 📜 License
 
-Distributed under the MIT License.
+Click [here](./LICENSE.md).
 
 ## 🎗️ Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Click [here](./CONTRIBUTING.md).
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+## ⚖️ Code of Conduct
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/<feature_name>`)
-3. Commit your Changes (`git commit -m '<feature_name>_added'`)
-4. Push to the Branch (`git push origin feature/<feature_name>`)
-5. Open a Pull Request
+Click [here](./CODE_OF_CONDUCT.md).
