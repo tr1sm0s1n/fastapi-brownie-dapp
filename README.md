@@ -4,13 +4,11 @@ Ethereum Certificate DApp made for Pythonistas.
 
 ## 🛠 Built With
 
-<div align="left">
-<a href="https://docs.python.org/3/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/DEMYSTIF/DEMYSTIF/main/assets/icons/python.svg" width="36" height="36" alt="Python" /></a>
-<a href="https://eth-brownie.readthedocs.io/en/stable/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/DEMYSTIF/DEMYSTIF/main/assets/icons/ethereum.svg" width="36" height="36" alt="Ethereum" /></a>
-<a href="https://docs.vyperlang.org/en/stable/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/DEMYSTIF/DEMYSTIF/main/assets/icons/vyper.svg" width="36" height="36" alt="Vyper" /></a>
-<a href="https://fastapi.tiangolo.com/tutorial/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/DEMYSTIF/DEMYSTIF/main/assets/icons/fastapi.svg" width="36" height="36" alt="FastAPI" /></a>
-<a href="https://bulma.io/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/DEMYSTIF/DEMYSTIF/main/assets/icons/bulma.svg" width="36" height="36" alt="Bulma" /></a>
-</div>
+[![Python](https://img.shields.io/badge/python-B0C4DE?style=for-the-badge&logo=python)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/fastapi-B0C4DE?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com)
+[![Vyper](https://img.shields.io/badge/vyper-2F4F4F?style=for-the-badge&logo=ethereum)](https://docs.vyperlang.org/en/stable/)
+[![Brownie](https://img.shields.io/badge/brownie-2F4F4F?style=for-the-badge&logo=ethereum)](https://eth-brownie.readthedocs.io/en/stable/)
+[![Bulma](https://img.shields.io/badge/bulma-008080?style=for-the-badge&logo=bulma)](https://bulma.io/)
 
 ## ⚙️ Run Locally
 
@@ -48,10 +46,10 @@ echo 'Cython < 3.0' > /tmp/constraint.txt
 PIP_CONSTRAINT=/tmp/constraint.txt pip wheel PyYAML==5.4.1
 ```
 
-Install packages
+Install Brownie
 
 ```bash
-pip install -r requirements.txt
+pip install eth-brownie
 ```
 
 Compile the contract
@@ -72,6 +70,12 @@ Deploy the contract
 
 ```bash
 brownie run deploy_cert.py
+```
+
+Install FastAPI
+
+```bash
+pip install "fastapi[all]"
 ```
 
 Start the application

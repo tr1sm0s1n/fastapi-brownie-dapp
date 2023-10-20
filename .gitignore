@@ -7,3 +7,4 @@ build/
 details.json
 reports/
 venv/
+*.whl
