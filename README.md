@@ -4,18 +4,18 @@ Ethereum Certificate DApp made for Pythonistas.
 
 ## 🛠 Built With
 
-[![Python](https://img.shields.io/badge/python-B0C4DE?style=for-the-badge&logo=python)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/fastapi-B0C4DE?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com)
-[![Vyper](https://img.shields.io/badge/vyper-2F4F4F?style=for-the-badge&logo=ethereum)](https://docs.vyperlang.org/en/stable/)
-[![Brownie](https://img.shields.io/badge/brownie-2F4F4F?style=for-the-badge&logo=ethereum)](https://eth-brownie.readthedocs.io/en/stable/)
-[![Bulma](https://img.shields.io/badge/bulma-008080?style=for-the-badge&logo=bulma)](https://bulma.io/)
+[![Python](https://img.shields.io/badge/python-steelblue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/fastapi-steelblue?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![Vyper](https://img.shields.io/badge/vyper-darkslategray?style=for-the-badge&logo=ethereum&logoColor=white)](https://docs.vyperlang.org/en/stable/)
+[![Brownie](https://img.shields.io/badge/brownie-darkslategray?style=for-the-badge&logo=ethereum&logoColor=white)](https://eth-brownie.readthedocs.io/en/stable/)
+[![Bulma](https://img.shields.io/badge/bulma-indigo?style=for-the-badge&logo=bulma&logoColor=white)](https://bulma.io/)
 
 ## ⚙️ Run Locally
 
 Clone the repository
 
 ```bash
-git clone https://github.com/DEMYSTIF/fastapi-brownie-dapp.git
+git clone https://github.com/tr1sm0s1n/fastapi-brownie-dapp.git
 cd fastapi-brownie-dapp
 ```
 
