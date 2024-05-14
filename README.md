@@ -4,11 +4,11 @@ Ethereum Certificate DApp made for Pythonistas.
 
 ## 🛠 Built With
 
-[![Python](https://img.shields.io/badge/python-steelblue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/fastapi-steelblue?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![Vyper](https://img.shields.io/badge/vyper-darkslategray?style=for-the-badge&logo=ethereum&logoColor=white)](https://docs.vyperlang.org/en/stable/)
-[![Brownie](https://img.shields.io/badge/brownie-darkslategray?style=for-the-badge&logo=ethereum&logoColor=white)](https://eth-brownie.readthedocs.io/en/stable/)
-[![Bulma](https://img.shields.io/badge/bulma-indigo?style=for-the-badge&logo=bulma&logoColor=white)](https://bulma.io/)
+[![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=for-the-badge)](https://www.python.org/)
+[![FastAPI Badge](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=fff&style=for-the-badge)](https://fastapi.tiangolo.com)
+[![Vyper Badge](https://img.shields.io/badge/Vyper-3C3C3D?logo=ethereum&logoColor=fff&style=for-the-badge)](https://docs.vyperlang.org/en/stable/)
+[![Brownie Badge](https://img.shields.io/badge/Brownie-3C3C3D?logo=ethereum&logoColor=fff&style=for-the-badge)](https://eth-brownie.readthedocs.io/en/stable/)
+[![Bulma Badge](https://img.shields.io/badge/Bulma-00D1B2?logo=bulma&logoColor=fff&style=for-the-badge)](https://bulma.io/)
 
 ## ⚙️ Run Locally
 
@@ -30,20 +30,13 @@ Activate the environment
 > For Linux
 
 ```bash
-source /venv/bin/activate
+source ./venv/bin/activate
 ```
 
 > For Windows PowerShell
 
 ```bash
 .\venv\Scripts\Activate.ps1
-```
-
-Workaround for PyYAML
-
-```bash
-echo 'Cython < 3.0' > /tmp/constraint.txt
-PIP_CONSTRAINT=/tmp/constraint.txt pip wheel PyYAML==5.4.1
 ```
 
 Install Brownie
@@ -58,13 +51,13 @@ Compile the contract
 brownie compile
 ```
 
+Run a blockchain simulation (geth/hardhat/foundry) on port **8545**.
+
 Test the contract
 
 ```bash
 brownie test
 ```
-
-Run a blockchain (ganache/geth/foundry) on port **8545**.
 
 Deploy the contract
 
