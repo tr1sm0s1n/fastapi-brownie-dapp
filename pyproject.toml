@@ -1,0 +1,10 @@
+[project]
+name = "fastapi-brownie-dapp"
+version = "0.1.0"
+description = "Ethereum Certificate DApp made for Pythonistas."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "eth-brownie>=1.20.6",
+    "fastapi[standard]>=0.114.0",
+]

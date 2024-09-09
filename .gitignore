@@ -8,3 +8,4 @@ details.json
 reports/
 venv/
 *.whl
+uv.lock
