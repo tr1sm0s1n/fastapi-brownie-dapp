@@ -19,62 +19,48 @@ git clone https://github.com/tr1sm0s1n/fastapi-brownie-dapp.git
 cd fastapi-brownie-dapp
 ```
 
-Create a virtual environment
+Install `uv`, an extremely fast Python package and project manager
 
-```bash
-python3 -m venv venv
-```
-
-Activate the environment
-
-> For Linux
-
-```bash
-source ./venv/bin/activate
-```
-
-> For Windows PowerShell
-
-```bash
-.\venv\Scripts\Activate.ps1
+```sh
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 Install Brownie
 
-```bash
-pip install eth-brownie
+```sh
+uv add eth-brownie
 ```
 
 Compile the contract
 
-```bash
-brownie compile
+```sh
+uv run brownie compile
 ```
 
 Run a blockchain simulation (geth/hardhat/foundry) on port **8545**.
 
 Test the contract
 
-```bash
-brownie test
+```sh
+uv run brownie test
 ```
 
 Deploy the contract
 
-```bash
-brownie run deploy_cert.py
+```sh
+uv run brownie run deploy_cert.py
 ```
 
 Install FastAPI
 
-```bash
-pip install "fastapi[all]"
+```sh
+uv add "fastapi[standard]"
 ```
 
 Start the application
 
-```bash
-uvicorn main:app --reload
+```sh
+uv run fastapi dev main.py
 ```
 
 ## 📜 License
